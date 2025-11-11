@@ -5,7 +5,13 @@ Este é o site oficial da Gincana Solidária da Fatec Araras, um projeto que une
 
 O site serve como o principal "link na bio" para a campanha no Instagram, sendo o canal central de informações tanto para o público externo (doadores) quanto para os alunos participantes.
 
-**Acesse o site ao vivo:** [**gincanasolidariafatecararas2025.vercel.app**](httpsD://gincanasolidariafatecararas2025.vercel.app/)
+<br>
+
+<a href="https://gincanasolidariafatecararas2025.vercel.app/" target="_blank">
+  <img src="https://img.shields.io/badge/Ver%20Site%20Ao%20Vivo-a62c37?style=for-the-badge&logo=Vercel&logoColor=white" alt="Ver Site Ao Vivo no Vercel">
+</a>
+
+<br>
 
 ---
 
