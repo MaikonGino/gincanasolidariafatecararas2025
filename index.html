@@ -9,14 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <link rel="preload" as="image" href="images/header.jpg">
+
     <link rel="icon" href="images/logo-gincana.png" type="image/png">
     <link rel="apple-touch-icon" href="images/logo-gincana.png">
-
     <meta property="og:title" content="Gincana Solidária - Fatec Araras">
     <meta property="og:description" content="Participe da Gincana Solidária! Conectando pontos, equipes e doações para a FunSayão.">
     <meta property="og:image" content="https://gincanasolidariafatecararas2025.vercel.app/images/logo-gincana.png">
     <meta property="og:type" content="website">
-
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="stylesheet" href="styles/CSSmobile.css">
@@ -26,29 +26,30 @@
 <body>
 
 <header>
-    <div class="header-content-wrapper">
-        <div class="header-logo">
-            <img src="images/logo-gincana.png" alt="Logo Gincana Solidária: Conectando Pontos e Doações" class="logo-principal">
-        </div>
-        <div class="header-text">
-            <p class="slogan">Uma fusão do trote de integração com uma ação solidária para ajudar a comunidade.</p>
-            <p class="intro-text">Nosso objetivo é colaborar com a FunSayão, que cuida de crianças e adolescentes, arrecadando itens essenciais para o dia a dia deles.</p>
-        </div>
-    </div>
-    <div class="header-date-wrapper">
-        <p class="data-limite" ontouchstart="">Arrecadações até 27/11/2025!</p>
-    </div>
 </header>
 
 <main class="container">
 
+    <section class="card" id="intro-card">
+
+        <h2>Gincana Solidária Fatec Araras</h2>
+
+        <div class="header-text">
+            <p class="slogan">Uma fusão do trote de integração com uma ação solidária para ajudar a comunidade.</p>
+            <p class="intro-text">Nosso objetivo é colaborar com a FunSayão, que cuida de crianças e adolescentes, arrecadando itens essenciais para o dia a dia deles.</p>
+        </div>
+
+        <div class="header-date-wrapper">
+            <p class="data-limite" ontouchstart="">Arrecadações até 27/11/2025!</p>
+        </div>
+    </section>
     <section class="card" id="collection-points">
         <h2>Como e Onde Doar?</h2>
         <p>Você pode entregar sua doação em qualquer um dos pontos de coleta na faculdade:</p>
         <ul class="collection-points-list">
             <li>Secretaria Acadêmica</li>
             <li>Sala dos Professores (entregar aos auxiliares docentes)</li>
-            <li>Rua Jarbas Leme Godoy, 875 - Jd. José Ometto II | CEP: 13606-389 Araras/SP</li>
+            <li>Rua Jarbas Leme Godoy, 875 - Jd. José Ometto II - CEP: 13606-389 – Araras - SP</li>
         </ul>
     </section>
 
@@ -167,7 +168,6 @@
                 <img src="images/logo-fatec.png" alt="Logo Fatec Araras" class="logo-fatec-footer">
             </a>
         </div>
-
         <div class="footer-partner-block">
             <p><strong>Instituição apoiada:</strong></p>
             <a href="https://www.instagram.com/funsayao/" target="_blank" rel="noopener noreferrer" title="Instagram da FunSayão">
@@ -175,12 +175,12 @@
             </a>
         </div>
     </div>
-
     <div class="footer-sub">
-        <p>Design e Desenvolvimento by Agência Comunica </p>
-        <p> Fatec Araras © 2025.</p>
+        <p>Design e Desenvolvimento by Agência Comunica.</p>
+        <p>© 2025 | Fatec Araras.</p>
     </div>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>

@@ -9,11 +9,11 @@
     --color-action: #606d7f;
     --color-logo-wine: #a62c37;  /* Cor Vinho (VERMELHO FATEC) */
 
-    /* ATUALIZAÇÃO: Novas cores do tema Fatec */
-    --color-background: #f9f9fa; /* Fundo do site (cinza bem claro) */
+    /* Novas cores do tema Fatec */
+    --color-background: #f9f9fa;
     --color-card-bg: #ffffff;
     --color-border: #e0e0e0;
-    --color-footer-bg: #005670;  /* Azul-petróleo (NÃO MAIS USADO NO FOOTER, mas mantido para o H2) */
+    --color-footer-bg: #005670;
 
     /* Cores das Equipes (Estilo Universitário) */
     --team-black: #2d3436;
@@ -50,7 +50,7 @@ body {
 
 .pre-header-container {
     display: flex;
-    justify-content: center; /* Centraliza no mobile */
+    justify-content: center;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -59,7 +59,7 @@ body {
 .pre-header-logos {
     display: flex;
     align-items: center;
-    gap: 15px; /* Espaço entre os logos */
+    gap: 15px;
 }
 
 .logo-fatec-header {
@@ -67,7 +67,7 @@ body {
 }
 
 .logo-cps-header {
-    height: 35px; /* Um pouco menor para dar hierarquia */
+    height: 35px;
 }
 /* === FIM DA ATUALIZAÇÃO === */
 
@@ -78,97 +78,77 @@ body {
     margin: 0 auto;
 }
 
-/* --- Cabeçalho da Gincana (Hero) --- */
+/* --- CABEÇALHO SÓ COM IMAGEM (COVER) --- */
 header {
+    width: 100%;
     padding: 0;
-    background-color: var(--color-text);
+    background-color: var(--color-card-bg);
     border-bottom: 1px solid var(--color-border);
-    margin-bottom: 25px;
-    background-image: url('../images/gincana_background.png');
+    margin-bottom: 25px; /* ATUALIZADO: Margem normal */
+
+    background-image: url('../images/header.png');
+
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center center;
     position: relative;
     overflow: hidden;
+
+    /* Proporção 2.5:1 (baseado na imagem 1200x480) */
+    height: 0;
+    padding-top: 40%;
 }
 
-/* Overlay BRANCO (gradiente) sobre a imagem */
 header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom,
-    rgba(255,255,255,0.9) 0%,
-    rgba(255,255,255,0.75) 100%);
-    z-index: 1;
+    display: none;
 }
+/* === FIM DAS ATUALIZAÇÕES DO CABEÇALHO === */
 
-/* Wrapper com fundo transparente (agora só centraliza) */
-.header-content-wrapper {
+
+/* --- NOVO CARD DE INTRODUÇÃO --- */
+#intro-card {
+    padding: 20px;
+    text-align: left;
     position: relative;
-    z-index: 2;
-    padding: 40px 10px 20px 10px;
-    background: transparent;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    z-index: 3;
+    /* ATUALIZADO: Removida a margem negativa que causava sobreposição */
 }
 
-/* --- Conteúdo do Header --- */
-.header-logo {
-    text-align: center;
-}
-
-.logo-principal {
-    max-width: 340px;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-.header-text {
-    text-align: center;
-    max-width: 450px;
-    margin: 0 auto;
-}
-
-header h1 {
+/* Título H2 para o card de introdução (pega o estilo H2 padrão) */
+#intro-card h2 {
     font-size: 1.9rem;
     font-weight: 700;
     color: var(--color-text);
-    line-height: 1.2;
-    text-shadow: none;
-    margin-bottom: 10px;
 }
 
-header .slogan {
-    font-size: 0.95rem;
+#intro-card .header-text {
+    text-align: left;
+    max-width: 100%;
+    margin: 0;
+}
+
+#intro-card .slogan {
+    font-size: 1.1rem;
     color: var(--color-logo-wine);
     font-weight: 600;
     text-shadow: none;
     margin-bottom: 10px;
 }
 
-header .intro-text {
-    font-size: 0.9rem;
+#intro-card .intro-text {
+    font-size: 0.95rem;
     color: var(--color-text);
     text-shadow: none;
     margin-bottom: 0;
 }
 
-
-/* --- Banner da Data --- */
-.header-date-wrapper {
-    position: relative;
-    z-index: 2;
+#intro-card .header-date-wrapper {
     text-align: center;
     margin-top: 25px;
-    padding-bottom: 30px;
 }
 
-header .data-limite {
+/* Estilos do botão */
+#intro-card .data-limite {
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--color-card-bg);
@@ -181,12 +161,13 @@ header .data-limite {
     transition: all 0.2s ease-out, transform 0.2s ease, filter 0.2s ease;
 }
 
-header .data-limite:active {
+#intro-card .data-limite:active {
     transform: scale(0.97);
     filter: brightness(0.9);
     box-shadow: 0 0 20px rgba(166, 44, 55, 0.8),
     0 0 30px rgba(166, 44, 55, 0.6);
 }
+/* === FIM DAS NOVAS REGRAS DO CARD === */
 
 
 /* --- Estilo Padrão de Card (Estilo FATEC) --- */
@@ -198,34 +179,32 @@ header .data-limite:active {
     border: 1px solid var(--color-border);
 }
 
-.card:not(#scoring-section) {
+.card:not(#scoring-section):not(#intro-card) {
     padding: 20px;
 }
 
-/* === ATUALIZAÇÃO: TÍTULO H2 ESTILO FATEC (barra arredondada) === */
+/* TÍTULO H2 ESTILO FATEC (barra arredondada) */
 .card h2 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--color-footer-bg); /* Cor azul-petróleo do site Fatec */
-    border-bottom: none; /* Remove a borda antiga */
-    padding-bottom: 12px; /* Aumenta o espaço para a linha */
+    color: var(--color-footer-bg);
+    border-bottom: none;
+    padding-bottom: 12px;
     margin-bottom: 20px;
     display: inline-block;
-    position: relative; /* Necessário para o pseudo-elemento */
+    position: relative;
 }
 
-/* A nova linha (grossa, curta, arredondada) */
 .card h2::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 6px; /* Mais grossa */
-    width: 60%; /* Mais curta que o texto */
-    background-color: var(--color-logo-wine); /* Cor Vinho */
-    border-radius: 10px; /* Pontas arredondadas */
+    height: 6px;
+    width: 60%;
+    background-color: var(--color-logo-wine);
+    border-radius: 10px;
 }
-/* === FIM DA ATUALIZAÇÃO === */
 
 .card p {
     font-size: 0.95rem;
@@ -541,7 +520,7 @@ header .data-limite:active {
     min-width: 70px;
 }
 
-/* === ATUALIZAÇÃO: RODAPÉ BRANCO (Estilo Modelo) === */
+/* === RODAPÉ BRANCO (Estilo Modelo) === */
 footer {
     text-align: center; /* Centraliza no mobile */
     padding: 30px 5%;
