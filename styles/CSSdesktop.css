@@ -1,0 +1,185 @@
+/* =================================
+   CSSdesktop.css (Ajustes de Override)
+   ================================= */
+
+/* Media query para tablets e desktops */
+@media (min-width: 768px) {
+
+    /* --- Layout Principal --- */
+    .container {
+        max-width: 900px;
+    }
+
+    /* --- Cabeçalho (ATUALIZADO PARA BACKGROUND IMAGE) --- */
+    header {
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    /* Wrapper do conteúdo com fundo semitransparente (Desktop) */
+    .header-content-wrapper {
+        padding: 60px 20px 40px 20px;
+        max-width: 900px;
+        margin: 0 auto;
+        border-radius: 0 0 20px 20px;
+        background: linear-gradient(to bottom,
+        rgba(0,0,0,0.7) 0%,
+        rgba(0,0,0,0.5) 70%,
+        transparent 100%);
+    }
+
+    /* Conteúdo do Header */
+    .header-logo {
+        text-align: center;
+    }
+
+    .logo-principal {
+        max-width: 400px;
+        margin-bottom: 25px;
+    }
+
+    .header-text {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    header h1 {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+    }
+
+    header .slogan {
+        font-size: 1.15rem;
+        margin-bottom: 15px;
+    }
+
+    header .intro-text {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+
+    .header-date-wrapper {
+        margin-top: 30px;
+        padding-bottom: 50px;
+    }
+
+    header .data-limite {
+        font-size: 1.2rem;
+        padding: 12px 24px;
+    }
+    /* --- FIM DAS ATUALIZAÇÕES DO CABEÇALHO --- */
+
+
+    /* --- Estilo Padrão de Card --- */
+    .card {
+        padding: 0; /* ATUALIZAÇÃO: Removido para o .tabs-content */
+        margin-bottom: 30px;
+    }
+
+    /* Padding padrão para cards que NÃO são de abas */
+    .card:not(#scoring-section) {
+        padding: 30px 35px;
+    }
+
+    .card h2 {
+        font-size: 1.8rem;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+
+    /* --- Seção: Equipes --- */
+    .team-info {
+        font-size: 1rem !important;
+    }
+
+    .teams-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .team-card {
+        padding: 35px 15px;
+        font-size: 1.3rem;
+    }
+
+    /* Efeito hover no neon das equipes */
+    .team-card:hover {
+        transform: translateY(-4px);
+    }
+    #team-black:hover {
+        box-shadow: 0 8px 25px rgba(45, 52, 54, 0.6);
+    }
+    #team-blue:hover {
+        box-shadow: 0 8px 25px rgba(9, 132, 227, 0.6);
+    }
+    #team-green:hover {
+        box-shadow: 0 8px 25px rgba(0, 184, 148, 0.6);
+    }
+    #team-yellow:hover {
+        box-shadow: 0 8px 25px rgba(241, 196, 15, 0.7);
+    }
+
+
+    /* === ATUALIZAÇÃO: ABAS NO DESKTOP === */
+    .tab-toggle {
+        font-size: 1.2rem;
+        padding: 18px 15px;
+    }
+
+    .tabs-content {
+        padding: 30px 35px; /* Restaura o padding do card */
+    }
+
+    .activity-subtitle {
+        font-size: 1.4rem;
+    }
+    /* === FIM DAS ATUALIZAÇÕES === */
+
+
+    /* --- Seção: Busca e Tabela --- */
+    #search-input {
+        padding: 14px 18px;
+    }
+
+    #voice-search-btn {
+        height: 54px;
+        width: 54px;
+    }
+
+    #voice-search-btn .mic-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .table-wrapper {
+        overflow-x: hidden;
+    }
+
+    .donation-table {
+        font-size: 1rem;
+    }
+
+    .donation-table th,
+    .donation-table td {
+        padding: 16px 14px;
+    }
+
+    .donation-table td:last-child {
+        font-size: 1.2rem;
+    }
+
+    /* --- Rodapé --- */
+    .footer-logos {
+        gap: 40px;
+    }
+
+    .footer-logos img[alt="Logo Fatec Araras"] {
+        height: 60px;
+    }
+    .footer-logos img[alt="Logo FunSayão"] {
+        height: 50px;
+    }
+}

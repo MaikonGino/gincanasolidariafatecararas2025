@@ -1,0 +1,512 @@
+/* =================================
+   CSSmobile.css (Base - Mobile First)
+   ================================= */
+
+/* --- Variáveis de Cor (Paleta Aprovada) --- */
+:root {
+    /* Cores da Identidade Visual (do logo) */
+    --color-text: #3a3a3a;       /* Cinza escuro do texto "Gincana Solidária" */
+    --color-action: #606d7f;     /* Cinza-azulado do coração */
+    --color-logo-wine: #a62c37;  /* Cor Vinho do logo */
+    --color-background: #f4f7f6; /* Fundo levemente cinza (moderno) */
+    --color-card-bg: #ffffff;    /* Fundo dos cards (branco) */
+    --color-border: #e0e0e0;     /* Borda sutil */
+
+    /* Cores das Equipes (Estilo Universitário) */
+    --team-black: #2d3436;
+    --team-blue: #0984e3;
+    --team-green: #00b894;
+    --team-yellow: #f1c40f;
+}
+
+/* --- Reset Básico e Fontes --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Layout Principal --- */
+.container {
+    width: 92%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* --- Cabeçalho (Fundo com sua imagem e Overlay para Legibilidade) --- */
+header {
+    padding: 0;
+    background-color: var(--color-text);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 25px;
+    background-image: url('../images/gincana_background.png');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay Escuro sobre a imagem */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Wrapper para o conteúdo do cabeçalho com fundo semi-transparente */
+.header-content-wrapper {
+    position: relative;
+    z-index: 2;
+    padding: 40px 10px 20px 10px;
+    background: linear-gradient(to bottom,
+    rgba(0,0,0,0.6) 0%,
+    rgba(0,0,0,0.4) 70%,
+    transparent 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Conteúdo do Header --- */
+.header-logo {
+    text-align: center;
+}
+
+.logo-principal {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.header-text {
+    text-align: center;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    margin-bottom: 10px;
+}
+
+header .slogan {
+    font-size: 0.95rem;
+    color: #f0f0f0;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+}
+
+header .intro-text {
+    font-size: 0.9rem;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    margin-bottom: 0;
+}
+
+/* --- Banner da Data --- */
+.header-date-wrapper {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 25px;
+    padding-bottom: 30px;
+}
+
+/* Botão de Data com Cor Vinho */
+header .data-limite {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-card-bg);
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-logo-wine);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(166, 44, 55, 0.6),
+    0 0 20px rgba(166, 44, 55, 0.4);
+}
+
+
+/* --- Estilo Padrão de Card (Moderno) --- */
+.card {
+    background-color: var(--color-card-bg);
+    border-radius: 12px;
+    /* padding: 20px; */ /* REMOVIDO para o card de abas */
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--color-border);
+}
+
+/* Padding padrão para cards que NÃO são de abas */
+.card:not(#scoring-section) {
+    padding: 20px;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-action);
+    border-bottom: 2px solid var(--color-action);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+/* --- Seção: Pontos de Coleta --- */
+.collection-points-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.collection-points-list li {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 15px;
+    background-color: #f9f9f9;
+    border-left: 5px solid var(--color-action);
+    margin-bottom: 10px;
+    border-radius: 0 8px 8px 0;
+}
+
+/* --- Seção: Equipes (Design Impecável) --- */
+.team-info {
+    font-size: 0.9rem !important;
+    text-align: center;
+}
+
+.teams-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.team-card {
+    padding: 28px 10px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito Neon e Cores de Texto CORRIGIDOS */
+#team-black {
+    background-color: var(--team-black);
+    box-shadow: 0 4px 15px rgba(45, 52, 54, 0.5);
+}
+#team-blue {
+    background-color: var(--team-blue);
+    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.5);
+    color: var(--color-text);
+    text-shadow: none;
+}
+#team-green {
+    background-color: var(--team-green);
+    box-shadow: 0 4px 15px rgba(0, 184, 148, 0.5);
+    color: var(--color-text);
+    text-shadow: none;
+}
+#team-yellow {
+    background-color: var(--team-yellow);
+    color: var(--color-text);
+    box-shadow: 0 4px 15px rgba(241, 196, 15, 0.6);
+    text-shadow: none;
+}
+
+
+/* === SEÇÃO DE PONTUAÇÃO (ABAS) === */
+#scoring-section {
+    padding: 0; /* Remove padding do card pai */
+}
+
+.tabs-controls {
+    display: flex;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* === ATUALIZAÇÃO ABAS === */
+.tab-toggle {
+    flex: 1;
+    padding: 15px 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text); /* Cor INATIVA (Cinza) */
+    background-color: var(--color-background); /* Fundo INATIVO (Cinza claro) */
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.7; /* INATIVO fica levemente apagado */
+}
+
+.tab-toggle:first-child {
+    border-top-left-radius: 12px;
+}
+.tab-toggle:last-child {
+    border-top-right-radius: 12px;
+}
+
+.tab-toggle.active {
+    color: var(--color-logo-wine); /* Cor ATIVA (Vinho) */
+    background-color: var(--color-card-bg); /* Fundo ATIVO (Branco) */
+    border-bottom: 3px solid var(--color-logo-wine); /* Borda ATIVA (Vinho) */
+    opacity: 1; /* ATIVO tem opacidade total */
+}
+/* === FIM DA ATUALIZAÇÃO === */
+
+.tabs-content {
+    padding: 20px; /* Adiciona o padding de volta */
+}
+
+.tab-pane {
+    display: none; /* Escondido por padrão */
+}
+
+.tab-pane.active {
+    display: block; /* Visível */
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* --- Estilos para a nova Aba de Atividades --- */
+.activity-subtitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.ranking-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: var(--color-background);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.ranking-points span {
+    font-size: 0.95rem;
+    color: var(--color-action);
+}
+
+.activity-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.activity-list li {
+    font-size: 0.95rem;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--color-border);
+}
+
+/* Lista de pontos fixos (usa flex para alinhar) */
+.activity-list.fixed-points li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.activity-list.fixed-points li span {
+    font-weight: 700;
+    color: var(--color-action);
+    font-size: 1rem;
+    white-space: nowrap;
+    padding-left: 10px;
+}
+
+
+/* --- Seção: Busca e Tabela --- */
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 8px;
+}
+
+#search-input {
+    width: 100%;
+    flex-grow: 1;
+    padding: 12px 15px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    outline: none;
+    -webkit-appearance: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: var(--color-action);
+    box-shadow: 0 0 8px rgba(96, 109, 127, 0.2);
+}
+
+/* Estilo do Botão de Voz (SVG) */
+#voice-search-btn {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    background-color: var(--color-card-bg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#voice-search-btn .mic-icon {
+    width: 22px;
+    height: 22px;
+    stroke: var(--color-action);
+    transition: all 0.3s ease;
+}
+
+#voice-search-btn:hover {
+    background-color: #f9f9f9;
+    border-color: var(--color-action);
+}
+
+#voice-search-btn.is-listening {
+    background-color: var(--color-action);
+    border-color: var(--color-action);
+    animation: pulse 1.5s infinite;
+}
+
+/* Cor do ícone SVG ao escutar */
+#voice-search-btn.is-listening .mic-icon {
+    stroke: var(--color-card-bg);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(96, 109, 127, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(96, 109, 127, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(96, 109, 127, 0); }
+}
+
+/* Tabela Responsiva */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+}
+
+.donation-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.donation-table th,
+.donation-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.donation-table thead {
+    background-color: var(--color-text);
+    color: var(--color-card-bg);
+}
+
+.donation-table th {
+    font-weight: 600;
+    padding: 14px 10px;
+}
+
+.donation-table tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+.donation-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.donation-table td:last-child {
+    text-align: right;
+    font-weight: 700;
+    color: var(--color-action);
+    font-size: 1.1rem;
+    min-width: 70px;
+}
+
+/* --- Rodapé --- */
+footer {
+    text-align: center;
+    padding: 30px 10px;
+    margin-top: 20px;
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-card-bg);
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 15px;
+}
+
+.footer-logos img {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+.footer-logos a:hover img {
+    opacity: 1;
+}
+
+.footer-logos img[alt="Logo Fatec Araras"] {
+    height: 50px;
+}
+.footer-logos img[alt="Logo FunSayão"] {
+    height: 40px;
+}
+
+.footer-credit {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 20px;
+}
