@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // --- 3. NOVA LÓGICA DE TROCA DE ABAS (TABS) ---
+    // --- 3. LÓGICA DE TROCA DE ABAS (TABS) ---
 
     const tabToggles = document.querySelectorAll(".tab-toggle");
     const tabPanes = document.querySelectorAll(".tab-pane");

@@ -5,12 +5,15 @@
 /* --- Variáveis de Cor (Paleta Aprovada) --- */
 :root {
     /* Cores da Identidade Visual (do logo) */
-    --color-text: #3a3a3a;       /* Cinza escuro do texto "Gincana Solidária" */
-    --color-action: #606d7f;     /* Cinza-azulado do coração */
-    --color-logo-wine: #a62c37;  /* Cor Vinho do logo */
-    --color-background: #f4f7f6; /* Fundo levemente cinza (moderno) */
-    --color-card-bg: #ffffff;    /* Fundo dos cards (branco) */
-    --color-border: #e0e0e0;     /* Borda sutil */
+    --color-text: #3a3a3a;
+    --color-action: #606d7f;
+    --color-logo-wine: #a62c37;  /* Cor Vinho (VERMELHO FATEC) */
+
+    /* ATUALIZAÇÃO: Novas cores do tema Fatec */
+    --color-background: #f9f9fa; /* Fundo do site (cinza bem claro) */
+    --color-card-bg: #ffffff;
+    --color-border: #e0e0e0;
+    --color-footer-bg: #005670;  /* Azul-petróleo (NÃO MAIS USADO NO FOOTER, mas mantido para o H2) */
 
     /* Cores das Equipes (Estilo Universitário) */
     --team-black: #2d3436;
@@ -38,6 +41,36 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* === PRÉ-CABEÇALHO ESTILO FATEC === */
+.pre-header {
+    background-color: var(--color-card-bg);
+    padding: 10px 5%;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.pre-header-container {
+    display: flex;
+    justify-content: center; /* Centraliza no mobile */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pre-header-logos {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre os logos */
+}
+
+.logo-fatec-header {
+    height: 40px;
+}
+
+.logo-cps-header {
+    height: 35px; /* Um pouco menor para dar hierarquia */
+}
+/* === FIM DA ATUALIZAÇÃO === */
+
 /* --- Layout Principal --- */
 .container {
     width: 92%;
@@ -45,13 +78,12 @@ body {
     margin: 0 auto;
 }
 
-/* === ATUALIZAÇÃO DO CABEÇALHO === */
+/* --- Cabeçalho da Gincana (Hero) --- */
 header {
     padding: 0;
     background-color: var(--color-text);
     border-bottom: 1px solid var(--color-border);
     margin-bottom: 25px;
-    /* ATUALIZADO: Corrigido o nome do arquivo de imagem */
     background-image: url('../images/gincana_background.png');
     background-size: cover;
     background-position: center center;
@@ -67,10 +99,9 @@ header::before {
     left: 0;
     right: 0;
     bottom: 0;
-    /* ATUALIZADO: Gradiente movido para cá (full-width) e mais sutil */
     background: linear-gradient(to bottom,
-    rgba(255,255,255,0.9) 0%, /* 90% opaco no topo */
-    rgba(255,255,255,0.75) 100%); /* 75% opaco na base */
+    rgba(255,255,255,0.9) 0%,
+    rgba(255,255,255,0.75) 100%);
     z-index: 1;
 }
 
@@ -79,22 +110,22 @@ header::before {
     position: relative;
     z-index: 2;
     padding: 40px 10px 20px 10px;
-    background: transparent; /* ATUALIZADO: Gradiente movido para o ::before */
+    background: transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-/* --- Conteúdo do Header (Fontes Corrigidas) --- */
+/* --- Conteúdo do Header --- */
 .header-logo {
     text-align: center;
 }
 
 .logo-principal {
-    max-width: 400px; /* ATUALIZADO: Logo maior */
+    max-width: 340px;
     height: auto;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .header-text {
@@ -126,7 +157,6 @@ header .intro-text {
     text-shadow: none;
     margin-bottom: 0;
 }
-/* === FIM DAS ATUALIZAÇÕES DO CABEÇALHO === */
 
 
 /* --- Banner da Data --- */
@@ -138,7 +168,6 @@ header .intro-text {
     padding-bottom: 30px;
 }
 
-/* Botão de Data com Cor Vinho (Efeitos já OK) */
 header .data-limite {
     font-size: 1.1rem;
     font-weight: 700;
@@ -152,22 +181,20 @@ header .data-limite {
     transition: all 0.2s ease-out, transform 0.2s ease, filter 0.2s ease;
 }
 
-/* Efeito de "Luz" e "Zoom Out" (Press) */
-header .data-limite:hover,
 header .data-limite:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
     filter: brightness(0.9);
     box-shadow: 0 0 20px rgba(166, 44, 55, 0.8),
     0 0 30px rgba(166, 44, 55, 0.6);
 }
 
 
-/* --- Estilo Padrão de Card (Moderno) --- */
+/* --- Estilo Padrão de Card (Estilo FATEC) --- */
 .card {
     background-color: var(--color-card-bg);
-    border-radius: 12px;
+    border-radius: 8px;
     margin-bottom: 25px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--color-border);
 }
 
@@ -175,14 +202,30 @@ header .data-limite:active {
     padding: 20px;
 }
 
+/* === ATUALIZAÇÃO: TÍTULO H2 ESTILO FATEC (barra arredondada) === */
 .card h2 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--color-action);
-    border-bottom: 2px solid var(--color-action);
-    padding-bottom: 10px;
-    margin-bottom: 15px;
+    color: var(--color-footer-bg); /* Cor azul-petróleo do site Fatec */
+    border-bottom: none; /* Remove a borda antiga */
+    padding-bottom: 12px; /* Aumenta o espaço para a linha */
+    margin-bottom: 20px;
+    display: inline-block;
+    position: relative; /* Necessário para o pseudo-elemento */
 }
+
+/* A nova linha (grossa, curta, arredondada) */
+.card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 6px; /* Mais grossa */
+    width: 60%; /* Mais curta que o texto */
+    background-color: var(--color-logo-wine); /* Cor Vinho */
+    border-radius: 10px; /* Pontas arredondadas */
+}
+/* === FIM DA ATUALIZAÇÃO === */
 
 .card p {
     font-size: 0.95rem;
@@ -199,8 +242,8 @@ header .data-limite:active {
     font-size: 1rem;
     font-weight: 600;
     padding: 12px 15px;
-    background-color: #f9f9f9;
-    border-left: 5px solid var(--color-action);
+    background-color: var(--color-background);
+    border-left: 5px solid var(--color-logo-wine);
     margin-bottom: 10px;
     border-radius: 0 8px 8px 0;
 }
@@ -226,12 +269,12 @@ header .data-limite:active {
     color: white;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-    cursor: pointer; /* Adiciona o cursor de clique */
+    cursor: pointer;
 }
 
 .team-card:active {
-    transform: scale(0.97); /* Efeito de "pressionar" */
-    filter: brightness(0.9); /* Escurece um pouco ao clicar */
+    transform: scale(0.97);
+    filter: brightness(0.9);
 }
 
 #team-black {
@@ -277,23 +320,23 @@ header .data-limite:active {
     color: var(--color-text);
     background-color: var(--color-background);
     border: none;
-    border-bottom: 3px solid transparent;
+    border-bottom: 4px solid transparent;
     cursor: pointer;
     transition: all 0.3s ease;
     opacity: 0.7;
 }
 
 .tab-toggle:first-child {
-    border-top-left-radius: 12px;
+    border-top-left-radius: 8px;
 }
 .tab-toggle:last-child {
-    border-top-right-radius: 12px;
+    border-top-right-radius: 8px;
 }
 
 .tab-toggle.active {
-    color: var(--color-logo-wine);
+    color: var(--color-text);
     background-color: var(--color-card-bg);
-    border-bottom: 3px solid var(--color-logo-wine);
+    border-bottom: 4px solid var(--color-logo-wine);
     opacity: 1;
 }
 
@@ -313,6 +356,26 @@ header .data-limite:active {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+.tab-pane h2 {
+    color: var(--color-footer-bg);
+    border-bottom: none;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.tab-pane h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 6px;
+    width: 60%;
+    background-color: var(--color-logo-wine);
+    border-radius: 10px;
 }
 
 /* --- Estilos para a nova Aba de Atividades --- */
@@ -336,7 +399,7 @@ header .data-limite:active {
 
 .ranking-points span {
     font-size: 0.95rem;
-    color: var(--color-action);
+    color: var(--color-text);
 }
 
 .activity-list {
@@ -358,7 +421,7 @@ header .data-limite:active {
 
 .activity-list.fixed-points li span {
     font-weight: 700;
-    color: var(--color-action);
+    color: var(--color-text);
     font-size: 1rem;
     white-space: nowrap;
     padding-left: 10px;
@@ -386,8 +449,8 @@ header .data-limite:active {
 }
 
 #search-input:focus {
-    border-color: var(--color-action);
-    box-shadow: 0 0 8px rgba(96, 109, 127, 0.2);
+    border-color: var(--color-logo-wine);
+    box-shadow: 0 0 8px rgba(166, 44, 55, 0.2);
 }
 
 #voice-search-btn {
@@ -413,12 +476,12 @@ header .data-limite:active {
 
 #voice-search-btn:hover {
     background-color: #f9f9f9;
-    border-color: var(--color-action);
+    border-color: var(--color-logo-wine);
 }
 
 #voice-search-btn.is-listening {
-    background-color: var(--color-action);
-    border-color: var(--color-action);
+    background-color: var(--color-logo-wine);
+    border-color: var(--color-logo-wine);
     animation: pulse 1.5s infinite;
 }
 
@@ -427,9 +490,9 @@ header .data-limite:active {
 }
 
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(96, 109, 127, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(96, 109, 127, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(96, 109, 127, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(166, 44, 55, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(166, 44, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(166, 44, 55, 0); }
 }
 
 /* Tabela Responsiva */
@@ -473,51 +536,70 @@ header .data-limite:active {
 .donation-table td:last-child {
     text-align: right;
     font-weight: 700;
-    color: var(--color-action);
+    color: var(--color-logo-wine);
     font-size: 1.1rem;
     min-width: 70px;
 }
 
-/* --- Rodapé --- */
+/* === ATUALIZAÇÃO: RODAPÉ BRANCO (Estilo Modelo) === */
 footer {
-    text-align: center;
-    padding: 30px 10px;
-    margin-top: 20px;
-    border-top: 1px solid var(--color-border);
-    background-color: var(--color-card-bg);
+    text-align: center; /* Centraliza no mobile */
+    padding: 30px 5%;
+    margin-top: 30px;
+    border-top: 1px solid var(--color-border); /* Borda cinza */
+    background-color: var(--color-card-bg); /* Fundo Branco */
+    color: var(--color-text); /* Texto escuro */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-partner-block {
+    margin-bottom: 25px;
 }
 
 footer p {
     font-size: 0.9rem;
-    color: #777;
-    margin-bottom: 15px;
+    color: var(--color-text); /* Texto escuro */
+    margin-bottom: 5px;
 }
 
-.footer-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    margin-bottom: 15px;
+footer p strong {
+    color: var(--color-text); /* Texto escuro */
+    font-weight: 700; /* Negrito */
 }
 
-.footer-logos img {
-    opacity: 0.8;
+.footer-partner-block a {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.footer-partner-block img {
+    opacity: 1; /* Opacidade total */
     transition: opacity 0.3s ease;
 }
-.footer-logos a:hover img {
-    opacity: 1;
+.footer-partner-block a:hover img {
+    opacity: 0.7; /* Efeito hover */
 }
 
-.footer-logos img[alt="Logo Fatec Araras"] {
-    height: 50px;
+.logo-fatec-footer {
+    height: 45px;
 }
-.footer-logos img[alt="Logo FunSayão"] {
+.logo-funsayao-footer {
     height: 40px;
 }
 
-.footer-credit {
-    font-size: 0.8rem;
-    color: #888;
+.footer-sub {
+    border-top: 1px solid var(--color-border); /* Borda cinza */
+    padding-top: 20px;
     margin-top: 20px;
 }
+
+.footer-sub p {
+    font-size: 0.8rem;
+    color: #777; /* Cinza claro para créditos */
+    text-align: center;
+}
+/* === FIM DA ATUALIZAÇÃO === */

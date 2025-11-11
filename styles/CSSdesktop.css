@@ -5,33 +5,49 @@
 /* Media query para tablets e desktops */
 @media (min-width: 768px) {
 
+    /* === PRÉ-CABEÇALHO === */
+    .pre-header {
+        padding: 15px 5%;
+    }
+
+    .pre-header-container {
+        justify-content: space-between;
+    }
+
+    .pre-header-logos {
+        gap: 20px;
+    }
+
+    .logo-fatec-header {
+        height: 50px;
+    }
+
+    .logo-cps-header {
+        height: 45px;
+    }
+    /* === FIM DA ATUALIZAÇÃO === */
+
+
     /* --- Layout Principal --- */
     .container {
         max-width: 900px;
     }
 
-    /* === ATUALIZAÇÃO DO CABEÇALHO DESKTOP === */
+    /* --- Cabeçalho da Gincana (Hero) --- */
     header {
         padding: 0;
         margin-bottom: 30px;
     }
 
-    /* Wrapper com fundo transparente (agora só centraliza) */
     .header-content-wrapper {
         padding: 60px 20px 40px 20px;
         max-width: 900px;
         margin: 0 auto;
-        /* ATUALIZADO: removido background e border-radius daqui */
-    }
-
-    /* Conteúdo do Header (Fontes já herdadas do mobile) */
-    .header-logo {
-        text-align: center;
     }
 
     .logo-principal {
-        max-width: 450px; /* ATUALIZADO: Logo maior */
-        margin-bottom: 05px;
+        max-width: 400px;
+        margin-bottom: 25px;
     }
 
     .header-text {
@@ -54,8 +70,6 @@
         font-size: 1rem;
         margin-bottom: 0;
     }
-    /* === FIM DAS ATUALIZAÇÕES DO CABEÇALHO === */
-
 
     .header-date-wrapper {
         margin-top: 30px;
@@ -68,25 +82,33 @@
     }
 
     header .data-limite:hover {
-        transform: scale(1.03) translateY(-5px); /* Levanta e dá zoom */
-        filter: brightness(1.05); /* Leve brilho */
-        /* Efeito de "luz" mais forte */
+        transform: scale(1.03) translateY(-5px);
+        filter: brightness(1.05);
         box-shadow: 0 8px 30px rgba(166, 44, 55, 0.7);
     }
 
-    /* --- Estilo Padrão de Card --- */
+    /* --- Estilo Padrão de Card (Estilo FATEC) --- */
     .card {
         padding: 0;
         margin-bottom: 30px;
+        border-radius: 8px;
     }
 
     .card:not(#scoring-section) {
         padding: 30px 35px;
     }
 
+    /* === TÍTULO H2 ESTILO FATEC === */
     .card h2 {
         font-size: 1.8rem;
+        padding-bottom: 15px;
     }
+
+    .card h2::after {
+        height: 8px;
+        width: 50%;
+    }
+    /* === FIM DA ATUALIZAÇÃO === */
 
     .card p {
         font-size: 1rem;
@@ -108,8 +130,8 @@
     }
 
     .team-card:hover {
-        transform: scale(1.03) translateY(-5px); /* Zoom e levanta mais */
-        filter: brightness(1.05); /* Leve brilho */
+        transform: scale(1.03) translateY(-5px);
+        filter: brightness(1.05);
     }
     #team-black:hover {
         box-shadow: 0 8px 30px rgba(45, 52, 54, 0.7);
@@ -121,7 +143,7 @@
         box-shadow: 0 8px 30px rgba(0, 184, 148, 0.7);
     }
     #team-yellow:hover {
-        box-shadow: 0 8px 30px rgba(241, 196, 15, 1);
+        box-shadow: 0 8px 30px rgba(241, 196, 15, 0.8);
     }
 
 
@@ -133,6 +155,16 @@
 
     .tabs-content {
         padding: 30px 35px;
+    }
+
+    .tab-pane h2 {
+        font-size: 1.8rem;
+        padding-bottom: 15px;
+    }
+
+    .tab-pane h2::after {
+        height: 8px;
+        width: 50%;
     }
 
     .activity-subtitle {
@@ -172,15 +204,38 @@
         font-size: 1.2rem;
     }
 
-    /* --- Rodapé --- */
-    .footer-logos {
-        gap: 40px;
+    /* === ATUALIZAÇÃO: RODAPÉ BRANCO (DESKTOP) === */
+    footer {
+        padding: 40px 5%;
     }
 
-    .footer-logos img[alt="Logo Fatec Araras"] {
-        height: 60px;
+    .footer-container {
+        display: flex;
+        justify-content: center; /* Centraliza os blocos */
+        align-items: flex-start;
+        gap: 60px; /* Mais espaço */
+        text-align: center; /* Centraliza o texto dentro dos blocos */
     }
-    .footer-logos img[alt="Logo FunSayão"] {
+
+    .footer-partner-block {
+        margin-bottom: 0;
+    }
+
+    .logo-fatec-footer {
         height: 50px;
     }
+    .logo-funsayao-footer {
+        height: 45px;
+    }
+
+    .footer-sub {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-sub p {
+        text-align: center;
+    }
+    /* === FIM DA ATUALIZAÇÃO === */
 }
