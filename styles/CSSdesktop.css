@@ -10,32 +10,28 @@
         max-width: 900px;
     }
 
-    /* --- Cabeçalho (ATUALIZADO PARA BACKGROUND IMAGE) --- */
+    /* === ATUALIZAÇÃO DO CABEÇALHO DESKTOP === */
     header {
         padding: 0;
         margin-bottom: 30px;
     }
 
-    /* Wrapper do conteúdo com fundo semitransparente (Desktop) */
+    /* Wrapper com fundo transparente (agora só centraliza) */
     .header-content-wrapper {
         padding: 60px 20px 40px 20px;
         max-width: 900px;
         margin: 0 auto;
-        border-radius: 0 0 20px 20px;
-        background: linear-gradient(to bottom,
-        rgba(0,0,0,0.7) 0%,
-        rgba(0,0,0,0.5) 70%,
-        transparent 100%);
+        /* ATUALIZADO: removido background e border-radius daqui */
     }
 
-    /* Conteúdo do Header */
+    /* Conteúdo do Header (Fontes já herdadas do mobile) */
     .header-logo {
         text-align: center;
     }
 
     .logo-principal {
-        max-width: 400px;
-        margin-bottom: 25px;
+        max-width: 450px; /* ATUALIZADO: Logo maior */
+        margin-bottom: 05px;
     }
 
     .header-text {
@@ -58,6 +54,8 @@
         font-size: 1rem;
         margin-bottom: 0;
     }
+    /* === FIM DAS ATUALIZAÇÕES DO CABEÇALHO === */
+
 
     .header-date-wrapper {
         margin-top: 30px;
@@ -68,16 +66,20 @@
         font-size: 1.2rem;
         padding: 12px 24px;
     }
-    /* --- FIM DAS ATUALIZAÇÕES DO CABEÇALHO --- */
 
+    header .data-limite:hover {
+        transform: scale(1.03) translateY(-5px); /* Levanta e dá zoom */
+        filter: brightness(1.05); /* Leve brilho */
+        /* Efeito de "luz" mais forte */
+        box-shadow: 0 8px 30px rgba(166, 44, 55, 0.7);
+    }
 
     /* --- Estilo Padrão de Card --- */
     .card {
-        padding: 0; /* ATUALIZAÇÃO: Removido para o .tabs-content */
+        padding: 0;
         margin-bottom: 30px;
     }
 
-    /* Padding padrão para cards que NÃO são de abas */
     .card:not(#scoring-section) {
         padding: 30px 35px;
     }
@@ -105,38 +107,37 @@
         font-size: 1.3rem;
     }
 
-    /* Efeito hover no neon das equipes */
     .team-card:hover {
-        transform: translateY(-4px);
+        transform: scale(1.03) translateY(-5px); /* Zoom e levanta mais */
+        filter: brightness(1.05); /* Leve brilho */
     }
     #team-black:hover {
-        box-shadow: 0 8px 25px rgba(45, 52, 54, 0.6);
+        box-shadow: 0 8px 30px rgba(45, 52, 54, 0.7);
     }
     #team-blue:hover {
-        box-shadow: 0 8px 25px rgba(9, 132, 227, 0.6);
+        box-shadow: 0 8px 30px rgba(9, 132, 227, 0.7);
     }
     #team-green:hover {
-        box-shadow: 0 8px 25px rgba(0, 184, 148, 0.6);
+        box-shadow: 0 8px 30px rgba(0, 184, 148, 0.7);
     }
     #team-yellow:hover {
-        box-shadow: 0 8px 25px rgba(241, 196, 15, 0.7);
+        box-shadow: 0 8px 30px rgba(241, 196, 15, 1);
     }
 
 
-    /* === ATUALIZAÇÃO: ABAS NO DESKTOP === */
+    /* === ABAS NO DESKTOP === */
     .tab-toggle {
         font-size: 1.2rem;
         padding: 18px 15px;
     }
 
     .tabs-content {
-        padding: 30px 35px; /* Restaura o padding do card */
+        padding: 30px 35px;
     }
 
     .activity-subtitle {
         font-size: 1.4rem;
     }
-    /* === FIM DAS ATUALIZAÇÕES === */
 
 
     /* --- Seção: Busca e Tabela --- */

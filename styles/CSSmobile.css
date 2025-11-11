@@ -45,12 +45,13 @@ body {
     margin: 0 auto;
 }
 
-/* --- Cabeçalho (Fundo com sua imagem e Overlay para Legibilidade) --- */
+/* === ATUALIZAÇÃO DO CABEÇALHO === */
 header {
     padding: 0;
     background-color: var(--color-text);
     border-bottom: 1px solid var(--color-border);
     margin-bottom: 25px;
+    /* ATUALIZADO: Corrigido o nome do arquivo de imagem */
     background-image: url('../images/gincana_background.png');
     background-size: cover;
     background-position: center center;
@@ -58,7 +59,7 @@ header {
     overflow: hidden;
 }
 
-/* Overlay Escuro sobre a imagem */
+/* Overlay BRANCO (gradiente) sobre a imagem */
 header::before {
     content: '';
     position: absolute;
@@ -66,34 +67,34 @@ header::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    /* ATUALIZADO: Gradiente movido para cá (full-width) e mais sutil */
+    background: linear-gradient(to bottom,
+    rgba(255,255,255,0.9) 0%, /* 90% opaco no topo */
+    rgba(255,255,255,0.75) 100%); /* 75% opaco na base */
     z-index: 1;
 }
 
-/* Wrapper para o conteúdo do cabeçalho com fundo semi-transparente */
+/* Wrapper com fundo transparente (agora só centraliza) */
 .header-content-wrapper {
     position: relative;
     z-index: 2;
     padding: 40px 10px 20px 10px;
-    background: linear-gradient(to bottom,
-    rgba(0,0,0,0.6) 0%,
-    rgba(0,0,0,0.4) 70%,
-    transparent 100%);
+    background: transparent; /* ATUALIZADO: Gradiente movido para o ::before */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-/* --- Conteúdo do Header --- */
+/* --- Conteúdo do Header (Fontes Corrigidas) --- */
 .header-logo {
     text-align: center;
 }
 
 .logo-principal {
-    max-width: 300px;
+    max-width: 400px; /* ATUALIZADO: Logo maior */
     height: auto;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .header-text {
@@ -105,26 +106,28 @@ header::before {
 header h1 {
     font-size: 1.9rem;
     font-weight: 700;
-    color: #FFFFFF;
+    color: var(--color-text);
     line-height: 1.2;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    text-shadow: none;
     margin-bottom: 10px;
 }
 
 header .slogan {
     font-size: 0.95rem;
-    color: #f0f0f0;
+    color: var(--color-logo-wine);
     font-weight: 600;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    text-shadow: none;
     margin-bottom: 10px;
 }
 
 header .intro-text {
     font-size: 0.9rem;
-    color: #f0f0f0;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    color: var(--color-text);
+    text-shadow: none;
     margin-bottom: 0;
 }
+/* === FIM DAS ATUALIZAÇÕES DO CABEÇALHO === */
+
 
 /* --- Banner da Data --- */
 .header-date-wrapper {
@@ -135,7 +138,7 @@ header .intro-text {
     padding-bottom: 30px;
 }
 
-/* Botão de Data com Cor Vinho */
+/* Botão de Data com Cor Vinho (Efeitos já OK) */
 header .data-limite {
     font-size: 1.1rem;
     font-weight: 700;
@@ -146,6 +149,16 @@ header .data-limite {
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(166, 44, 55, 0.6),
     0 0 20px rgba(166, 44, 55, 0.4);
+    transition: all 0.2s ease-out, transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Efeito de "Luz" e "Zoom Out" (Press) */
+header .data-limite:hover,
+header .data-limite:active {
+    transform: scale(0.98);
+    filter: brightness(0.9);
+    box-shadow: 0 0 20px rgba(166, 44, 55, 0.8),
+    0 0 30px rgba(166, 44, 55, 0.6);
 }
 
 
@@ -153,13 +166,11 @@ header .data-limite {
 .card {
     background-color: var(--color-card-bg);
     border-radius: 12px;
-    /* padding: 20px; */ /* REMOVIDO para o card de abas */
     margin-bottom: 25px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
     border: 1px solid var(--color-border);
 }
 
-/* Padding padrão para cards que NÃO são de abas */
 .card:not(#scoring-section) {
     padding: 20px;
 }
@@ -214,10 +225,15 @@ header .data-limite {
     font-size: 1.2rem;
     color: white;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    cursor: pointer; /* Adiciona o cursor de clique */
 }
 
-/* Efeito Neon e Cores de Texto CORRIGIDOS */
+.team-card:active {
+    transform: scale(0.97); /* Efeito de "pressionar" */
+    filter: brightness(0.9); /* Escurece um pouco ao clicar */
+}
+
 #team-black {
     background-color: var(--team-black);
     box-shadow: 0 4px 15px rgba(45, 52, 54, 0.5);
@@ -244,7 +260,7 @@ header .data-limite {
 
 /* === SEÇÃO DE PONTUAÇÃO (ABAS) === */
 #scoring-section {
-    padding: 0; /* Remove padding do card pai */
+    padding: 0;
 }
 
 .tabs-controls {
@@ -252,20 +268,19 @@ header .data-limite {
     border-bottom: 1px solid var(--color-border);
 }
 
-/* === ATUALIZAÇÃO ABAS === */
 .tab-toggle {
     flex: 1;
     padding: 15px 10px;
     font-size: 1.1rem;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
-    color: var(--color-text); /* Cor INATIVA (Cinza) */
-    background-color: var(--color-background); /* Fundo INATIVO (Cinza claro) */
+    color: var(--color-text);
+    background-color: var(--color-background);
     border: none;
     border-bottom: 3px solid transparent;
     cursor: pointer;
     transition: all 0.3s ease;
-    opacity: 0.7; /* INATIVO fica levemente apagado */
+    opacity: 0.7;
 }
 
 .tab-toggle:first-child {
@@ -276,23 +291,22 @@ header .data-limite {
 }
 
 .tab-toggle.active {
-    color: var(--color-logo-wine); /* Cor ATIVA (Vinho) */
-    background-color: var(--color-card-bg); /* Fundo ATIVO (Branco) */
-    border-bottom: 3px solid var(--color-logo-wine); /* Borda ATIVA (Vinho) */
-    opacity: 1; /* ATIVO tem opacidade total */
+    color: var(--color-logo-wine);
+    background-color: var(--color-card-bg);
+    border-bottom: 3px solid var(--color-logo-wine);
+    opacity: 1;
 }
-/* === FIM DA ATUALIZAÇÃO === */
 
 .tabs-content {
-    padding: 20px; /* Adiciona o padding de volta */
+    padding: 20px;
 }
 
 .tab-pane {
-    display: none; /* Escondido por padrão */
+    display: none;
 }
 
 .tab-pane.active {
-    display: block; /* Visível */
+    display: block;
     animation: fadeIn 0.5s ease;
 }
 
@@ -336,7 +350,6 @@ header .data-limite {
     border-bottom: 1px dashed var(--color-border);
 }
 
-/* Lista de pontos fixos (usa flex para alinhar) */
 .activity-list.fixed-points li {
     display: flex;
     justify-content: space-between;
@@ -377,7 +390,6 @@ header .data-limite {
     box-shadow: 0 0 8px rgba(96, 109, 127, 0.2);
 }
 
-/* Estilo do Botão de Voz (SVG) */
 #voice-search-btn {
     flex-shrink: 0;
     width: 48px;
@@ -410,7 +422,6 @@ header .data-limite {
     animation: pulse 1.5s infinite;
 }
 
-/* Cor do ícone SVG ao escutar */
 #voice-search-btn.is-listening .mic-icon {
     stroke: var(--color-card-bg);
 }
